@@ -1,8 +1,28 @@
-apt update -y 
-apt upgrade -y  
+#!/bin/bash
+
+# Welcome message
+echo "Starting Termux setup... Please be patient."
+
+# Ensure storage access is granted (essential for first-time Termux users)
+termux-setup-storage
+
+# Update and upgrade Termux packages
+apt update -y && apt upgrade -y
+
+# Install required packages
 pkg install proot-distro -y
-proot-distro install ubuntu 
-echo "proot-distro login ubuntu" > pd 
-chmod +x pd 
-mv pd /data/data/com.termux/files/usr/bin 
-echo "Now write pd and press enter"
+
+# Install Ubuntu using proot-distro
+proot-distro install ubuntu || {
+    echo "❌ Ubuntu installation failed. Please check your internet connection or storage space."
+    exit 1
+}
+
+# Create 'pd' command for easy Ubuntu login
+echo "proot-distro login ubuntu" > /data/data/com.termux/files/usr/bin/pd
+chmod +x /data/data/com.termux/files/usr/bin/pd
+
+# Final instructions
+echo -e "\n✅ Setup complete!"
+echo "Type 'pd' and press Enter to start Ubuntu."
+echo "If you face issues, restart Termux and try again."
