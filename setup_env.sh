@@ -27,7 +27,7 @@ apt install -y playit || {
 }
 
 # Download and set up the Minecraft Bedrock server
-wget -q --show-progress https://filebin.net/7smdai2au1tobhr8/server.zip || {
+wget -q --show-progress https://github.com/debojitsantra/BedrockServerTermux/releases/download/1.0/server.zip || {
     echo "❌ Failed to download server.zip. Check your internet connection or the link."
     exit 1
 }
