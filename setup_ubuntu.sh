@@ -1,6 +1,6 @@
 apt update -y 
 apt upgrade -y  
-pkg install proot-distro 
+pkg install proot-distro -y
 proot-distro install ubuntu 
 echo "proot-distro login ubuntu" > pd 
 chmod +x pd 
