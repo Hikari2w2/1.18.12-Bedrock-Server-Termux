@@ -1,3 +1,21 @@
-cd Xboyes
-./start.sh
+#!/bin/bash
+
+# Navigate to the server directory
+if cd Xboyes 2>/dev/null; then
+    echo "✅ Entered the 'Xboyes' directory."
+else
+    echo "❌ Error: 'Xboyes' folder not found. Please ensure the server is correctly installed."
+    exit 1
+fi
+
+# Run the server
+if [ -f "./start.sh" ]; then
+    chmod +x start.sh  # Ensure start.sh is executable
+    ./start.sh
+else
+    echo "❌ Error: 'start.sh' not found. Please check the installation."
+    exit 1
+fi
+
+# Return to the previous directory
 cd
