@@ -27,12 +27,12 @@ apt install -y playit || {
 }
 
 # Download and set up the Minecraft Bedrock server
-wget -q --show-progress https://github.com/debojitsantra/BedrockServerTermux/releases/download/1.0/server.zip || {
+wget -q --show-progress https://files.catbox.moe/21uwft.zip || {
     echo "❌ Failed to download server.zip. Check your internet connection or the link."
     exit 1
 }
 
-unzip -o server.zip || {
+unzip -o 21uwft.zip || {
     echo "❌ Failed to unzip server.zip. Ensure there's enough storage."
     exit 1
 }
