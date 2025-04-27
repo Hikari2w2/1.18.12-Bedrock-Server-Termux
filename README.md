@@ -30,7 +30,7 @@ proot-distro login ubuntu
 apt update -y
 apt upgrade -y
 apt install wget -y  
-wget https://raw.githubusercontent.com/debojitsantra/BedrockServerTermux/refs/heads/main/setup_env.sh  
+wget https://github.com/Hikari2w2/1.18.12-Bedrock-Server-Termux/blob/main/setup_ubuntu.sh  
 bash setup_env.sh
 
   ```
